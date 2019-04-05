@@ -30,6 +30,7 @@ let restarauntNames = ["Burger King", "KFC", "Golden Cofee", "Paragraph", "Burge
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         cell.textLabel?.text = restarauntNames[indexPath.row]
+        cell.imageView?.image = UIImage(named: restarauntNames[indexPath.row])
 
         return cell
     }
