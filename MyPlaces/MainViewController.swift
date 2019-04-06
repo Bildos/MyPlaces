@@ -12,6 +12,7 @@ class MainViewController: UITableViewController {
     
 let restarauntNames = ["Burger King", "KFC", "Golden Cofe", "Paragraph", "BurgerClub", "PitStop", "Amsterdam", "Dominos", "SmilePitzza", "Times Cafe", "La Kave", "Korova" ]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,12 +28,12 @@ let restarauntNames = ["Burger King", "KFC", "Golden Cofe", "Paragraph", "Burger
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.textLabel?.text = restarauntNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: restarauntNames[indexPath.row])
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true
+        cell.nameLabel.text = restarauntNames[indexPath.row]
+        cell.imageOfPlaces.image = UIImage(named: restarauntNames[indexPath.row])
+        cell.imageOfPlaces.layer.cornerRadius = cell.imageOfPlaces.frame.size.height / 2
+        cell.imageOfPlaces.clipsToBounds = true
         return cell
     }
     
