@@ -6,14 +6,15 @@
 //  Copyright © 2019 Solo Mid. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Place {
     
     var name: String
-    var location: String
-    var type: String
-    var image: String
+    var location: String?
+    var type: String?
+    var image: UIImage?
+    var restaraunImage: String?
     
     static let restarauntNames = ["Burger King", "KFC", "Golden Cofe", "Paragraph", "BurgerClub", "PitStop", "Amsterdam", "Dominos", "SmilePitzza", "Times Cafe", "La Kave", "Korova" ]
     
@@ -23,7 +24,7 @@ struct Place {
         
         for place in restarauntNames{
             
-            places.append(Place(name: place, location: "Brest", type: "Restaran", image: place))
+            places.append(Place(name: place, location: "Brest", type: "Restaran",image: nil, restaraunImage: place))
         }
         
         

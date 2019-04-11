@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e02-8N-U4o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e02-8N-U4o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-2h-5IF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.50000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -228,13 +228,21 @@
                     <navigationItem key="navigationItem" title="New Place" id="nLV-6S-AMv">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0ba-cj-EMC">
                             <connections>
-                                <segue destination="TXp-0z-fTL" kind="unwind" unwindAction="cancelAction:" id="6oZ-E2-mTp"/>
+                                <action selector="cancelAction:" destination="uQI-A4-VUA" id="qgx-Zf-xGY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oa9-01-GDp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oa9-01-GDp">
+                            <connections>
+                                <segue destination="TXp-0z-fTL" kind="unwind" unwindAction="unwinSegue:" id="u9a-XD-qFu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="Au4-2h-5IF" id="WuP-b4-fSf"/>
+                        <outlet property="placeImage" destination="Au4-2h-5IF" id="WuP-b4-fSf"/>
+                        <outlet property="placeLocation" destination="U3F-aa-hoH" id="4kN-jq-uxv"/>
+                        <outlet property="placeName" destination="5Rq-i4-NlY" id="HAb-Uu-U4g"/>
+                        <outlet property="placeType" destination="zos-4y-x4Y" id="WSr-FC-BVx"/>
+                        <outlet property="saveButton" destination="Oa9-01-GDp" id="eHL-6A-edS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUq-Ug-uKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
