@@ -27,7 +27,6 @@ struct Place {
             places.append(Place(name: place, location: "Brest", type: "Restaran",image: nil, restaraunImage: place))
         }
         
-        
         return places
     }
 }
