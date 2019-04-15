@@ -6,27 +6,31 @@
 //  Copyright © 2019 Solo Mid. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Place {
+class Place: Object {
     
-    var name: String
-    var location: String?
-    var type: String?
-    var image: UIImage?
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
     var restaraunImage: String?
     
-    static let restarauntNames = ["Burger King", "KFC", "Golden Cofe", "Paragraph", "BurgerClub", "PitStop", "Amsterdam", "Dominos", "SmilePitzza", "Times Cafe", "La Kave", "Korova" ]
+     let restarauntNames = ["Burger King", "KFC", "Golden Cofe", "Paragraph", "BurgerClub", "PitStop", "Amsterdam", "Dominos", "SmilePitzza", "Times Cafe", "La Kave", "Korova" ]
     
-    static func getPlaces() -> [Place] {
-        
-        var places = [Place]()
+    func savePalaces() {
         
         for place in restarauntNames{
-            
-            places.append(Place(name: place, location: "Brest", type: "Restaran",image: nil, restaraunImage: place))
-        }
         
-        return places
+            let image = UIImage(named: place)
+            guard let imageData = image?.pngData() else { return }
+            let newPlace = Place()
+            newPlace.name = place
+            newPlace.location = "Brest"
+            newPlace.type = "Bar"
+            newPlace.imageData = imageData
+            
+            StorageManager.saveObject(newPlace) 
+        }
     }
 }
