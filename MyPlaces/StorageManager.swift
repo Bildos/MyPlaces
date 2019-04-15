@@ -10,9 +10,10 @@ import RealmSwift
 
 let realm = try! Realm()
 
-class StorageManager{
+class StorageManager {
     
-    static func saveObject(_ place: Place){
+    static func saveObject(_ place: Place) {
+        
         try! realm.write {
             realm.add(place)
         }
