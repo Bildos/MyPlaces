@@ -13,8 +13,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     var places: Results<Place>!
+    var ascendingSorting = true
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reversingSertingbutton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +74,32 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         guard let newPlaceVC = segue.source as? NewPlaceViewController else {return}
         newPlaceVC.savePlace()
+        tableView.reloadData()
+    }
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
+    }
+    
+    @IBAction func reversingSorting(_ sender: Any) {
+        
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reversingSertingbutton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reversingSertingbutton.image = #imageLiteral(resourceName: "ZA")
+        }
+        sorting()
+    }
+    
+    private func sorting(){
+    
+        if segmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "data", ascending: ascendingSorting)
+        } else {
+            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
         tableView.reloadData()
     }
 }

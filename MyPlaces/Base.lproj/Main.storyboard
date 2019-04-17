@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-2h-5IF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.50000000000006"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,6 +249,9 @@
                                     <segment title="Date"/>
                                     <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="O4n-J5-3qi" eventType="valueChanged" id="uXj-Dd-bWv"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,7 +270,11 @@
                         <viewLayoutGuide key="safeArea" id="Ink-p1-dDA"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="q1X-r4-B6W">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Aar-pc-SMH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Aar-pc-SMH">
+                            <connections>
+                                <action selector="reversingSorting:" destination="O4n-J5-3qi" id="6Jx-30-bh2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n7W-6q-cg0">
                             <connections>
                                 <segue destination="Jru-5f-vxK" kind="presentation" id="neX-Bw-Aih"/>
@@ -275,6 +282,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversingSertingbutton" destination="Aar-pc-SMH" id="gaE-pb-iaa"/>
+                        <outlet property="segmentedControl" destination="efN-QB-3Ld" id="Sie-RB-jue"/>
                         <outlet property="tableView" destination="3Rf-Jy-Rm9" id="vNC-hV-nIr"/>
                     </connections>
                 </viewController>
