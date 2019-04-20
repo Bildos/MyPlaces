@@ -24,6 +24,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var cosmosView: CosmosView!{
         didSet {
             cosmosView.settings.updateOnTouch = false
+            cosmosView.settings.fillMode = .half
         }
     }
     

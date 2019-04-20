@@ -28,11 +28,14 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = false
         placeName.addTarget(self, action: #selector(textFilChanget), for: .editingChanged)
         setupEditScreen()
-        
-        cosmosView.settings.fillMode = .half
-        cosmosView.didTouchCosmos = { raiting in
-            self.currentRaiting = raiting
+        if currentPlace != nil {
+            currentRaiting = currentPlace!.rating
         }
+        cosmosView.settings.fillMode = .half
+        cosmosView.didTouchCosmos = { rating in
+            self.currentRaiting = rating
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,7 +64,15 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)
         }
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showmap" {
+            return
         }
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place = currentPlace
+        
+    }
     func savePlace(){
         
         var image: UIImage?
@@ -80,7 +91,6 @@ class NewPlaceViewController: UITableViewController {
                              imageData: imageData,
                              rating: currentRaiting)
         
-       
         if currentPlace != nil{
            
             try! realm.write {
@@ -89,11 +99,9 @@ class NewPlaceViewController: UITableViewController {
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
                 currentPlace?.rating = newPlace.rating
+                
             }
         } else { StorageManager.saveObject(newPlace) }
-        
-        
-
     }
     
     private func setupEditScreen(){
@@ -124,7 +132,7 @@ class NewPlaceViewController: UITableViewController {
         dismiss(animated: true)
     }
     
-    }
+ }
 // работа с клавиатурой
 extension NewPlaceViewController: UITextFieldDelegate{
     
@@ -135,7 +143,7 @@ extension NewPlaceViewController: UITextFieldDelegate{
     
     @objc private func textFilChanget(){
         
-        if placeName.text?.isEmpty == false{
+        if placeName.text?.isEmpty == false {
             saveButton.isEnabled = true
         } else {
             saveButton.isEnabled = false
