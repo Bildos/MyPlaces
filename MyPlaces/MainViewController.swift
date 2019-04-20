@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
@@ -47,9 +48,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isFiltering {
             return filteredPlaces.count
         }
-        
-        print(places.count)
-        return places.isEmpty ? 0 : places.count
+        return  places.count
     }
 
     
@@ -69,8 +68,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlaces.image = UIImage(data: place.imageData!)
-        cell.imageOfPlaces.layer.cornerRadius = cell.imageOfPlaces.frame.size.height / 2
-        cell.imageOfPlaces.clipsToBounds = true
+        cell.cosmosView.rating = place.rating
+        
         return cell
     }
     
