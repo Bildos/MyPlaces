@@ -260,13 +260,26 @@
                                     <action selector="closeVC" destination="eYt-pa-3nl" eventType="touchUpInside" id="fnH-63-WEx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfp-MZ-QbG">
+                                <rect key="frame" x="285" y="577" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="jbz-RL-Hey"/>
+                                    <constraint firstAttribute="height" constant="50" id="z5w-Ji-DAk"/>
+                                </constraints>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="eYt-pa-3nl" eventType="touchUpInside" id="fNY-nc-k6J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Hfp-MZ-QbG" secondAttribute="bottom" constant="40" id="1Gd-Hp-slw"/>
                             <constraint firstItem="uMZ-IW-nFo" firstAttribute="top" secondItem="Ifv-Yn-dot" secondAttribute="top" id="C8U-U8-k2a"/>
                             <constraint firstItem="zbM-X6-GQ2" firstAttribute="top" secondItem="2eJ-tK-HfR" secondAttribute="top" constant="35" id="FeN-5Q-tBA"/>
                             <constraint firstItem="2eJ-tK-HfR" firstAttribute="trailing" secondItem="zbM-X6-GQ2" secondAttribute="trailing" constant="35" id="HPe-0g-7IZ"/>
                             <constraint firstItem="uMZ-IW-nFo" firstAttribute="leading" secondItem="2eJ-tK-HfR" secondAttribute="leading" id="Hvz-U3-c6l"/>
+                            <constraint firstAttribute="trailing" secondItem="Hfp-MZ-QbG" secondAttribute="trailing" constant="40" id="TXt-IX-1sc"/>
                             <constraint firstItem="uMZ-IW-nFo" firstAttribute="trailing" secondItem="2eJ-tK-HfR" secondAttribute="trailing" id="XM8-Vn-ky3"/>
                             <constraint firstItem="uMZ-IW-nFo" firstAttribute="bottom" secondItem="2eJ-tK-HfR" secondAttribute="bottom" id="rYM-SF-vNl"/>
                         </constraints>
@@ -454,6 +467,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
