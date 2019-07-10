@@ -280,19 +280,6 @@
                                     <constraint firstAttribute="height" constant="20" id="iAf-Y9-Ma5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-XJ-65I">
-                                <rect key="frame" x="169" y="589" width="38" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="closeVC" destination="eYt-pa-3nl" eventType="touchUpInside" id="Zks-VC-t4C"/>
-                                    <action selector="doneButtonPress" destination="eYt-pa-3nl" eventType="touchUpInside" id="Q4K-hk-YZW"/>
-                                    <action selector="doneButtonPressed" destination="eYt-pa-3nl" eventType="touchUpInside" id="WBN-Bg-ZPU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfp-MZ-QbG">
                                 <rect key="frame" x="305" y="494" width="30" height="30"/>
                                 <constraints>
@@ -310,6 +297,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-XJ-65I">
+                                <rect key="frame" x="145" y="578" width="84" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeVC" destination="eYt-pa-3nl" eventType="touchUpInside" id="Zks-VC-t4C"/>
+                                    <action selector="doneButtonPress" destination="eYt-pa-3nl" eventType="touchUpInside" id="Q4K-hk-YZW"/>
+                                    <action selector="doneButtonPressed" destination="eYt-pa-3nl" eventType="touchUpInside" id="WBN-Bg-ZPU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
